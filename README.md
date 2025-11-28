@@ -187,16 +187,15 @@ The learning curves for the top-performing models—MobileNetV2 (ID 18) and DS-C
 **Analysis of Instability:**
 While the overall trend is positive, we observe stochastic oscillation in the validation loss for both architectures. This instability suggests that the **Batch Size (64)** may be too small, introducing noise into the gradient updates, or the **Learning Rate (0.001)** is too aggressive near the convergence point. Future optimizations would involve a secondary hyperparameter tuning phase specifically targeting these training hyperparameters to smooth the validation curve and improve test accuracy.
 
-To diagnose the specific failure modes of the quantized models, we analyzed the confusion matrices for both the DS-CNN (ID 17) (left) and MobileNetV2 (ID 19) (right).
+To diagnose the specific failure modes of the quantized models, we analyzed the confusion matrices for both the DS-CNN (ID 17) and MobileNetV2 (ID 19).
 
-<div style="display: flex; justify-content: space-around; margin-top: 20px;">
-  <div style="text-align: center;">
-    <img src="images/cm_17.svg" alt="Confusion Matrix DS-CNN" style="width: 100%; max-width: 350px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="images/cm_19.svg" alt="Confusion Matrix MobileNetV2" style="width: 100%; max-width: 350px;">
-  </div>
-</div>
+**MobileNetV2 Confusion Matrix (ID 19):**
+<img src="images/cm_19.svg" alt="Confusion Matrix MobileNetV2" style="max-width: 450px; display: block; margin: 10px auto;">
+
+**DS-CNN Training Confusion Matrix(ID 17):**
+<img src="images/cm_17.svg" alt="Confusion Matrix DS-CNN" style="max-width: 450px; display: block; margin: 10px auto;">
+
+
 
 **Key Findings:**
 Both architectures exhibit similar phonetic confusion patterns. The primary difficulty lies in distinguishing between:
