@@ -4,7 +4,7 @@
 
 As part of my journey into EdgeAI, I undertook the [HarvardX Applications of TinyML course](https://www.edx.org/learn/tinyml/harvard-university-applications-of-tinyml). The course emphasizes the challenge of running complex neural networks on power-constrained microcontrollers (e.g., Arduino Nano 33 BLE Sense) with only 256KB of RAM and 1MB of Flash.
 
-My objective was to modernize the course's theoretical concepts by building an efficient Keyword Spotting (KWS) system capable of classifying 8 voice commands ("up", "down", "left", "right", "on", "off", "stop", "go"). The specific goal was to leverage the most recent libraries to achieve high accuracy within a **<100KB** footprint, mastering model quantization in the process.
+My objective was to modernize the course's theoretical concepts by building an efficient Keyword Spotting (KWS) system capable of classifying 8 voice commands ("up", "down", "left", "right", "on", "off", "stop", "go"). The specific goal was to leverage the most recent libraries to achieve high accuracy within a **<85KB** footprint, mastering model quantization in the process.
 
 To achieve this, I implemented a rigorous experimental pipeline testing **two distinct architectures** ([MobileNetV1-based DS-CNN](https://arxiv.org/pdf/1704.04861) and [MobileNetV2](https://arxiv.org/pdf/1801.04381)). I conducted a grid search across **6 feature engineering configurations** (varying MFCCs, sample rates, and frame lengths) to identify the optimal input signal. Finally, I applied and evaluated **post-training quantization** to compress the best-performing candidate for embedded deployment.
 
